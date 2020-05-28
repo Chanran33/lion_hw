@@ -1,0 +1,26 @@
+"""firstprj URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from theapp import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.main, name='main'),#main을 불러옴
+    path('intro/',views.intro, name='intro'),#intro함수를 불러옴
+    path('gallery/',views.photos, name='photos'),#photos 함수를 불러옴
+    path('memo/',views.memo,name='memo')
+]#name은 프로그램 안에서 사용될 이름, ''안에있는건 주소창에서 쓸꺼
